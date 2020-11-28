@@ -19,10 +19,10 @@ function factoriall(n) {
   }
   console.log(factoriall(10));
 // task 2 third option
-let result=10;
-for(let i=result; i>0; i--){
-   result*=i
-   console.log(result);
+let factorialTwo=10;
+for(let i=10; i>1; i--){
+   factorialTwo*=i
+   console.log(factorialTwo);
 }
 
 // task 3
@@ -59,10 +59,22 @@ console.log('porch - ', Math.round(porch));
 console.log('floor - ', Math.round(floor));
 
 //task 5
-// const medianNumber = 3;
-// for (let i=0; i<medianNumber; i++){
-//    let dash= '-';
-//    let pyramid = '#';
-//    console.log(dash+pyramid+dash);
-// }
+const medianNumber = 10;
+let dash = '';
+let dashTwo = 1;
+let hash = '';
+let hashTwo = 1;
+for (let i=0; i<medianNumber; i++){
+   
+   for (let i=1; i<=dashTwo; i++){
+      dash += '-'
+   }
+
+   for (let i=1; i<=hashTwo; i++){
+      hash += '#'
+   }
+   console.log(dash+hash+dash);
+  
+}
+
 
