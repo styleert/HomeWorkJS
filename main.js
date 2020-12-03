@@ -20,8 +20,11 @@ function factoriall(n) {
   console.log(factoriall(10));
 // task 2 third option
 let factorialTwo=10;
-for(let i=10; i>1; i--){
+for(let i=factorialTwo-1; i>=1; i--){
    factorialTwo*=i
+   if(i == 10 || i == 9 || i == 8 || i == 7 || i == 6 || i == 5 || i == 4 || i == 3 || i == 2){
+      continue;
+   }
    console.log(factorialTwo);
 }
 
@@ -60,21 +63,16 @@ console.log('floor - ', Math.round(floor));
 
 //task 5
 const medianNumber = 10;
-let dash = '';
-let dashTwo = 1;
-let hash = '';
-let hashTwo = 1;
-for (let i=0; i<medianNumber; i++){
-   
-   for (let i=1; i<=dashTwo; i++){
-      dash += '-'
-   }
-
-   for (let i=1; i<=hashTwo; i++){
+for (let i=1; i<=medianNumber; i++){
+   let dash = '';
+   let hash = '';
+   for (let j=0; j<2*i-1; j++){
       hash += '#'
    }
+   for (let j=0; j<medianNumber-i; j++){
+      dash += '-'
+   }
    console.log(dash+hash+dash);
-  
 }
 
 
