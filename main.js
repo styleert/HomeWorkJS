@@ -38,28 +38,11 @@ console.log(Math.ceil(numberOfPacks))
 // task 4
 const roomsOnFloor = 3;
 const floors = 9;
-const roomNumber = 270; 
-let porch;
-let floor;
-if (roomNumber%floors == 0) {
-   porch =(roomNumber/(roomsOnFloor*floors))
-} else {
-   porch =(roomNumber/(roomsOnFloor*floors))+1
-}
-for (let i=1; i<=roomNumber; i++) {
-   for(let i=1; i<roomsOnFloor; i++){
-      if (i !== roomNumber){
-         i++
-      }
-   }
-   if(floor < 9){
-      floor++
-   }else{
-      floor = 1
-   }
-}
-console.log('porch - ', Math.round(porch));
-console.log('floor - ', Math.round(floor));
+const roomNumber = 220; 
+const floor = Math.ceil((roomNumber)%(floors * roomsOnFloor)/(roomsOnFloor));
+const porch = Math.ceil((roomNumber)/(floors * roomsOnFloor)); 
+console.log('porch - ',(porch));
+console.log('floor - ',(floor));
 
 //task 5
 const medianNumber = 10;
