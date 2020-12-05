@@ -28,7 +28,7 @@ function getArray(){
     }
     console.log(arr)
 }
-getArray()
+getArray() 
 
 // task 3
 const namesOfDays = {
