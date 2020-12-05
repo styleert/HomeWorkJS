@@ -15,24 +15,24 @@ console.log(array);
 }
 
 // task 2
-
 function getArray(){
 	const amount = 9;
-	if(amount%3 !== 0) return console.log('NOT DIVIDED BY 3');
-    let a = [];
-    if(amount == 9){
-    a.push([1,2,3],[4,5,6],[7,8,9])
-    }else{(amount == 12)
-        a.push([1,2,3],[4,5,6],[7,8,9],[10,11,12])
+	if(amount%3 !== 0) console.log('NOT DIVIDED BY 3');
+    let arr = [];
+    let array = 0;
+    for(let i = 0; i < amount/3; i++){
+        arr.push([])
+        for(let j = 0; j < 3; j++){
+        arr[i].push(++array)
     }
-    console.log(a);
+    }
+    console.log(arr)
 }
-   
-// getArray()
+getArray()
 
-task 3
+// task 3
 const namesOfDays = {
-    ru: ['','Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+ ru: ['','Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
 	en: ['','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 }
 function getNameOfDay(lang,day){
@@ -42,14 +42,15 @@ function getNameOfDay(lang,day){
         console.log(namesOfDays.en[day])
     }
 };
-
-// getNameOfDay('ru',6)
-
+getNameOfDay('ru',6)
 // task 4
 
-// let num = [19, 5, 42, 2, 77];
-// function sumThree() {}
-// console.log();
+let min = [19, 5, 42, 2, 77];
+console.log(sumTwo(min));
+
+function sumTwo(array) {
+    return array.slice().sort((a, b) => a - b).slice(0, 2).reduce((a, b) => a + b);
+}
 
 // task 5
 
