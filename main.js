@@ -51,7 +51,6 @@ const getMiddleSalary = (arr) => {
  
     for (let key of arr) {
         averageValue += key.salary
-        console.log(averageValue)
     }
  
     return averageValue / arr.length;
@@ -62,6 +61,8 @@ const getMiddleSalary = (arr) => {
 //  task 6 
 
 const getRandomEmployee = (arr) => {
+    let randomNumber = Math.round(Math.random()*arr.length);
+    return arr[randomNumber]
 }
 
-getRandomEmployee(emplyeeConstructArr)
+console.log(getRandomEmployee(emplyeeConstructArr))
