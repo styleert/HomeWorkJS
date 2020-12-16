@@ -61,7 +61,7 @@ const getMiddleSalary = (arr) => {
 //  task 6 
 
 const getRandomEmployee = (arr) => {
-    let randomNumber = Math.round(Math.random()*arr.length);
+    let randomNumber = Math.round(Math.random()*arr.length-1);
     return arr[randomNumber]
 }
 
