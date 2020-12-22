@@ -1,20 +1,36 @@
 // task 1
 
-// let id = 1;
-// let student = [];
-// let arr = [];
+class Student{
+    constructor(enrollee){
+Object.assign(this,enrollee);
+this.id = Student.id++
+this.sortUsersByRate();
+}
 
-// class Student{
-//     constructor(enrollee){
-//     this.id = id++,
-//     this.name = enrollee.name,
-//     this.surname = enrollee.surname,
-//     this.ratingPoint = enrollee.ratingPoint,
-//     this.schoolPoint = enrollee.schoolPoint,
-//     this.isSelfPayment ;
-//     }
-// }
+static id = 1;
+static studentList = [];
 
+sortUsersByRate(){
+    const budgetStudentList = Student.studentList.filter(student => !student.isSelfPayment);
+    if(Student.studentList.length < 5){
+        this.isSelfPayment = this.ratingPoint < 800;
+        Student.studentList.push(this);
+        return;
+    }
+Student.studentList.push(this);
+    Student.studentList.sort((a,b) => {
+       if (a.ratingPoint > b.ratingPoint)return -1;
+       if (a.ratingPoint < b.ratingPoint)return 1;
+       if(a.schoolPoint > b.schoolPoint)return - 1;
+       if(a.schoolPoint < b.schoolPoint)return 1;
+       return 0;
+    })
+for(let index in Student.studentList){
+        Student.studentList[index.isSelfPayment] = index > 5;
+    }
+
+}
+}
 // task 2
 
 class CustomString{
