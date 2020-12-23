@@ -8,7 +8,22 @@
         this.workExperience = obj.workExperience; 
         this.isPrivileges = obj.isPrivileges; 
         this.gender = obj.gender;
-    }
+
+
+    Object.defineProperty(this, 'fullInfo', {
+  
+        get: function(){
+             return `id - ${this.id}, name - ${this.name}, surname - ${this.surname}`  
+        },
+        set: function(obj){
+            for (let key in obj) {
+                if(this[key] !== undefined){
+                this[key] = obj[key];
+            }
+        }
+        }
+    })
+}
     const employeeObj = new Emploee({id:0,name:'Valeriy',surname:'Zhmishenko',salary:1000,workExperience:10,isPrivileges:true,gender:'male'});
     console.log(employeeObj)
 
@@ -53,7 +68,7 @@ const getMiddleSalary = (arr) => {
         averageValue += key.salary
     }
  
-    return averageValue / arr.length;
+    return Math.round(averageValue / arr.length);
  }
  
  console.log(getMiddleSalary(emplyeeConstructArr));
@@ -66,3 +81,7 @@ const getRandomEmployee = (arr) => {
 }
 
 console.log(getRandomEmployee(emplyeeConstructArr))
+
+// task 7 
+
+console.log(employeeObj.fullInfo);
