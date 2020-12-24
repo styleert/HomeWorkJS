@@ -45,7 +45,7 @@ class Condidate {
 
 function getNamesCompany(){
    const comp = condidateArr.map(item => item.company)
-        // console.log(comp)
+        console.log(comp)
     };
 
 getNamesCompany()
