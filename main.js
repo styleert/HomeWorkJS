@@ -1,35 +1,62 @@
 // task 1
 
-const arr = ['Vasya', 'Petya', 'Alexey']
+const aRR = ['Vasya', 'Petya', 'Alexey']
 function removeUser(array,item){
     array.splice(item,1)
 }
-removeUser(arr, 1)
-console.log(arr)
+removeUser(aRR, 1)
+console.log(aRR)
 
 // task 2
 
-const obj = { name: 'Vasya', age: 1}
+const object = { name: 'Vasya', age: 1}
 function getAllKeys(key){
 return Object.keys(key)
 }
-console.log(getAllKeys(obj))
+console.log(getAllKeys(object))
 
 // task 3
 
 function getAllValues(key){
 return Object.values(key)
 }
-console.log(getAllValues(obj))
+console.log(getAllValues(object))
 
 // task 4 
 
-// function insertIntoarr(obj,id){
-//     arr.splice(arr.findIndex(obj = obj == id),0,obj)
-    // console.log(arr)
-// }
+function insertIntoarr(obj,id){
+    arr.splice(arr.indexOf(obj => obj.id == id),0,obj)
+    console.log(arr)
+}
 
-// insertIntoarr()
+const obj = {
+    id: 3,
+    name: 'Vasya'
+}
+
+const secondObj = {
+    id: 4,
+    name: 'Katya'
+}
+
+const arr = [
+    {
+        id: 1,
+        name: 'Kolya'
+    },
+    {
+        id: 2,
+        name: 'Petya'
+    },
+];
+
+insertIntoarr(obj, 2)
+console.log(arr) 
+
+insertIntoarr(secondObj, 1)
+console.log(arr) 
+
+
 
 // task 5
  
@@ -37,40 +64,63 @@ class Condidate {
     constructor(condidate) {
        Object.assign(this, condidate)
     }
+
+    get state(){
+        const stat = this.address.split(',').splice(2,1).join('');
+        return stat;
+    }
+
 }
-    const condidate = new Condidate(condidateArr[1])
-    // console.log(condidate)
+    const condidate = new Condidate(condidateArr[0])
+    console.log(condidate.state)
 
 // task 6
 
 function getNamesCompany(){
    const comp = condidateArr.map(item => item.company)
-        console.log(comp)
+    console.log(comp)
     };
-
 getNamesCompany()
 
 // task 7
 
 function getUsersByYear(years){
-    const getUser = condidateArr.filter(item => item.registered)
-    return condidateArr.map(item => item._id)
+    return condidateArr.filter(item => item.registered.split('-').slice(0,1).join('') == years)
     }
-// console.log(getUsersByYear(2017))
+console.log(getUsersByYear(2017))
 
 // task 8
 
 function getCondidatesByUnreadMsg(num) {
-    return condidateArr.filter(item => item.greeting == num);
+    return condidateArr.filter(item => item.greeting.match(/\d+/g) == num);
  }
 
  console.log(getCondidatesByUnreadMsg(8))
 //  task 9 
 
-function getCondidatesByGender(gen) {
-    return condidateArr.filter(item => item.gender === gen);
+function getCondidatesByGender(gender) {
+    return condidateArr.filter(item => item.gender == gender);
  }
 
- console.log(getCondidatesByGender('male'))
+ console.log(getCondidatesByGender('male'));
 
- 
+//  task 10.1
+
+// const customReduce = function(callback,accum){
+//     let index = 0;
+//     if(accum === undefined){
+//         accum  = this[0];
+//         index = 1
+//     }
+//     for (let i = index; i < this.lenght,i++){
+//         accum = callback(accum, this[0],i,this)
+//     }
+//     return accum;
+// }
+
+// Object.defineProperties(Array.prototype, 'customReduce'){
+//     value:customReduce;
+//     enuberable:false;
+// }
+
+// task 10.2
