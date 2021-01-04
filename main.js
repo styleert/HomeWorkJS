@@ -25,7 +25,7 @@ const sortCandidatesArr = (sortBy) => {
         return condidateArr.sort().balance
      } else if(sortBy === 'desc') {
         return condidateArr.reverse().sort().balance;
-     } else if (sortBy === undefined) {
+     } else if (sortBy === undefined){
         return condidateArr;
      } else {
         return 'wrong sorting'
