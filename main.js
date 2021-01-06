@@ -20,19 +20,32 @@ console.log(getCandidateById('5e216bc9a6059760578aefa4'))
 
 // task 3
 
-const sortCandidatesArr = (sortBy) => {
-    if (sortBy === 'asc') {
-        return condidateArr.sort().balance
-     } else if(sortBy === 'desc') {
-        return condidateArr.reverse().sort().balance;
-     } else if (sortBy === undefined){
+const sortCandidatesArr = sortBy => {
+   let num = (item) => item.balance.slice(1).replace(',','')
+    if (sortBy == 'asc') {
+        return condidateArr.sort((a,b) => num(a) - num(b))
+     } else if(sortBy == 'desc') {
+        return condidateArr.sort((a,b) => num(b) - num(a));
+     } else { 
         return condidateArr;
-     } else {
-        return 'wrong sorting'
-     }
+}
 }
 
 console.log(sortCandidatesArr('asc')) 
-console.log(sortCandidatesArr('desc')) 
-console.log(sortCandidatesArr()) 
-console.log(sortCandidatesArr('sad')) 
+
+
+// task 4
+
+const getEyeColorMap = () => {
+   let obj ={};
+    condidateArr.forEach(item=>{
+        let color = item.eyeColor
+        obj[color] = []
+    })
+    for (let key in obj){
+        obj[key] = condidateArr.filter(item=>item.eyeColor == key)
+    }
+    return obj;
+  }
+
+  console.log(getEyeColorMap())
