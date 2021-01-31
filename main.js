@@ -76,7 +76,7 @@ class Condidate {
 
 // task 6
 
-function getNamesCompany(){
+function getNamesCompany(){   
    const comp = condidateArr.map(item => item.company)
     console.log(comp)
     };
@@ -124,3 +124,26 @@ function getCondidatesByGender(gender) {
 // }
 
 // task 10.2
+
+// const Join = function (split){
+// 	if (split === undefined) {
+//         split = ',';
+// 	}
+// 	let str = '';
+// 	for(let i = 0; i < this.length; i++){
+// 		if(i == this.length - 1){
+// 			str = str + this[i];
+// 			return str;
+// 		}
+// 		str = str + this[i] + split;
+		
+// 	}
+// 	return str;
+// }
+
+// Object.defineProperty(Array.prototype, 'Join', {
+//     value: customJoin,
+//     enumerable: false,
+// })
+
+// console.log(array.Join(''))
